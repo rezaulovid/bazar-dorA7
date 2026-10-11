@@ -1,9 +1,11 @@
 "use client";
-
-import React from 'react';
 import Image from 'next/image';
 
 export default function Banner() {
+  const date = new Date().toLocaleDateString("bn-BD", {
+    dateStyle: "full",
+  });
+
   const handleScrollToProducts = () => {
     const element = document.getElementById("সব-পণ্য");
     if (element) {
@@ -12,14 +14,14 @@ export default function Banner() {
   };
 
   return (
-    <section className="w-full bg-[#f4f7f5] py-6">
+    <section className="w-full bg-white py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#f0f4f1] border border-[#e2e8e4] rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between relative overflow-hidden shadow-sm">
           
           {/* Left Side: Text Content */}
           <div className="flex-1 space-y-4 text-left z-10">
             <div className="inline-flex items-center gap-2 bg-[#dcfce7] text-[#15803d] px-3 py-1 rounded-full text-xs md:text-sm font-medium">
-              <span>শুক্রবার, ৯ অক্টোবর, ২০২৬</span>
+              <span>{date}</span>
             </div>
 
             {/* Heading */}
@@ -36,10 +38,7 @@ export default function Banner() {
             <div className="pt-2">
               <button 
                 onClick={handleScrollToProducts}
-                className="bg-[#15803d] hover:bg-[#166534]
-                 text-white font-medium px-5 py-2.5 
-                 rounded-lg text-sm transition-colors 
-                 shadow-sm cursor-pointer"
+                className="bg-[#15803d] hover:bg-[#166534] text-white font-medium px-5 py-2.5 rounded-lg text-sm transition-colors shadow-sm cursor-pointer"
               >
                 সব পণ্য দেখুন
               </button>

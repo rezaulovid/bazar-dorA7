@@ -35,11 +35,11 @@ interface PriceDownProps {
 }
 
 const PriceDown: React.FC<PriceDownProps> = ({ items = [], title = "আজকের দাম কমেছে যে পণ্যের" }) => {
-    // শুধু যেগুলোর দাম কমেছে (down) সেগুলোকে ফিল্টার করা হচ্ছে
+    // (down) 
     const downItems = items.filter(item => item.change.dir === "down");
 
     return (
-        <div className="w-full bg-[#f4f7f5] py-6">
+        <div className="w-full bg-gray-50 py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
                 <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
                     <span className="text-green-600">▼</span> {title}

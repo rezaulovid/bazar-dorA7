@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 interface Market {
@@ -43,7 +44,7 @@ export default function ProductDetailsPage() {
                 setError(null);
 
                 const response = await fetch(
-                    "https://api.api-store.workers.dev/api/bazardor/products"
+                    "https://openapi.programming-hero.com/api/bazardor/products"
                 );
 
                 if (!response.ok) {
@@ -62,7 +63,7 @@ export default function ProductDetailsPage() {
                     : [];
 
                 if (productData.length > 0) {
-                    setProduct(productData[0]); // প্রথম প্রোডাক্টটি সিলেক্ট করা হলো
+                    setProduct(productData[0]); 
                 }
             } catch (err: unknown) {
                 setError(
@@ -94,7 +95,7 @@ export default function ProductDetailsPage() {
         );
     }
 
-    // API থেকে আসা সমস্ত বাজারের মূল্য থেকে সর্বনিম্ন, সর্বোচ্চ এবং গড় হিসাব করা
+    // API 
     const minPrices = product.markets?.map((m) => m.min) || [0];
     const maxPrices = product.markets?.map((m) => m.max) || [0];
     const lowestMarketPrice = Math.min(...minPrices);
@@ -105,11 +106,11 @@ export default function ProductDetailsPage() {
         <div className="bg-gray-50 min-h-screen p-4 md:p-8">
             <div className="max-w-4xl mx-auto bg-white rounded-lg shadow border border-gray-200 overflow-hidden">
                 
-                {/* প্রোডাক্ট মেইন ইনফো সেকশন */}
+                {/* product */}
                 <div className="p-6 border-b border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div className="flex items-center gap-4">
                         <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center border overflow-hidden">
-                            <img src={product.image || "/product-placeholder.png"} alt={product.nameBn} className="w-12 h-12 object-contain" />
+                            <Image src={product.image || "/product-placeholder.png"} alt={product.nameBn} className="w-12 h-12 object-contain" />
                         </div>
                         <div>
                             <span className="text-xs text-gray-500">প্রতি {product.unit} - {product.categoryNameBn}</span>
@@ -130,7 +131,7 @@ export default function ProductDetailsPage() {
                     </div>
                 </div>
 
-                {/* দামের সারাংশ (Price Summary Cards) */}
+                {/* (Price Summary Cards) */}
                 <div className="p-6 bg-white grid grid-cols-1 md:grid-cols-3 gap-4 border-b border-gray-100">
                     <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                         <span className="text-xs text-gray-500 block">সর্বনিম্ন দাম</span>
@@ -149,7 +150,7 @@ export default function ProductDetailsPage() {
                     </div>
                 </div>
 
-                {/* বাজারভিত্তিক আজকের দাম (Table Section - API এর সকল বাজার দেখাবে) */}
+                {/*  (Table Section - API) */}
                 <div className="p-6">
                     <h3 className="font-bold text-gray-800 mb-4">বাজারভিত্তিক আজকের দাম</h3>
                     <div className="overflow-x-auto">

@@ -23,11 +23,11 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
     const { dir, pct } = item.change;
 
-    // কালার এবং সিম্বল নির্ধারণ
+ 
     let badgeColor = "text-gray-500 bg-gray-50";
     let symbol = "—";
     if (dir === "up") {
-        badgeColor = "text-red-500 bg-red-50"; // নির্দেশিকা অনুযায়ী সবুজ বা লাল (দাম বাড়লে লাল/কমলে সবুজ)
+        badgeColor = "text-red-500 bg-red-50"; 
         symbol = "▲";
     } else if (dir === "down") {
         badgeColor = "text-green-600 bg-green-50";

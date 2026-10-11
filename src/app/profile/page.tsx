@@ -1,46 +1,46 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { authClient } from "@/lib/auth-client"; // আপনার প্রজেক্টের পাথ অনুযায়ী এটি ঠিক করে নেবেন
+import { authClient } from "@/lib/auth-client"; 
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function ProfilePage() {
     const router = useRouter();
     
-    // BetterAuth থেকে সেশন ফেচ করা
+  
     const { data: session, isPending } = authClient.useSession();
     
     const [name, setName] = useState("");
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
-    // সেশন থেকে ইউজারের নাম ডেটা ফর্মে সেট করা
+    
     useEffect(() => {
         if (session?.user?.name) {
             setName(session.user.name);
         }
     }, [session]);
 
-    // সাইন-আউট হ্যান্ডলার
+   
     const handleSignOut = async () => {
         await authClient.signOut({
             fetchOptions: {
                 onSuccess: () => {
-                    router.push("/signin"); // লগআউট হওয়ার পর সাইন-ইন পেজে রিডাইরেক্ট করবে
+                    router.push("/signin"); 
                 },
             },
         });
     };
 
-    // প্রোফাইল আপডেট হ্যান্ডলার
-    const handleUpdate = async (e: React.FormEvent) => {
+    
+    const handleUpdate = async (e: React.SubmitEvent) => {
         e.preventDefault();
         setLoading(true);
         setMessage("");
 
         try {
-            // BetterAuth দিয়ে ইউজার আপডেট করার রিকোয়েস্ট
+            // BetterAuth
             const { error } = await authClient.updateUser({
                 name: name,
             });
@@ -70,7 +70,7 @@ export default function ProfilePage() {
                 <p className="text-sm
                  text-gray-500 mb-6">আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন ও পরিবর্তন করুন।</p>
 
-                {/* ডাইনামিক ইউজার কার্ড */}
+                
                 <div className="flex items-center justify-between border border-gray-100 bg-gray-50/50 p-4 rounded-xl mb-8">
                     <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-lg overflow-hidden">
@@ -99,7 +99,7 @@ export default function ProfilePage() {
                     </button>
                 </div>
 
-                {/* আপডেট ফর্ম */}
+                {/* update*/}
                 <form onSubmit={handleUpdate} className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium
@@ -126,11 +126,11 @@ export default function ProfilePage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-[#15803d] 
-                        hover:bg-[#166534] text-white
-                         font-medium py-3 rounded-xl
-                          transition-colors shadow-sm
-                           text-sm cursor-pointer"
+                        className="w-full bg-green-700 
+               hover:bg-green-800 text-white
+                font-medium py-3 rounded-xl
+               transition-colors shadow-sm
+                text-sm cursor-pointer"
                     >
                         {loading ? "আপডেট হচ্ছে..." : "আপডেট"}
                     </button>

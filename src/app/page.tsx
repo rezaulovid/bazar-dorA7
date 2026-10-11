@@ -45,9 +45,7 @@ export default function Home() {
                 setLoading(true);
                 setError(null);
 
-                const response = await fetch(
-                    "https://api.api-store.workers.dev/api/bazardor/products"
-                );
+                const response = await fetch("https://openapi.programming-hero.com/api/bazardor/products");
 
                 if (!response.ok) {
                     throw new Error("ডেটা ফেচ করতে সমস্যা হয়েছে!");
@@ -87,8 +85,10 @@ export default function Home() {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-screen">
-                <p className="text-gray-500 text-lg">লোড হচ্ছে...</p>
+            <div className="flex justify-center 
+            items-center min-h-screen">
+                <p className="text-gray-500 
+                text-lg">লোড হচ্ছে...</p>
             </div>
         );
     }
@@ -111,10 +111,10 @@ export default function Home() {
 
     return (
         <main className="min-h-screen bg-[#f4f7f5] pb-12">
-            {/* ব্যানার সেকশন */}
+            
             <Banner />
 
-            {/* Section A — আজ দাম বেড়েছে */}
+            {/* Section A */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="mb-4">
                     <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Section B — আজ দাম কমেছে */}
+            {/* Section B — */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                 <div className="mb-4">
                     <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
@@ -139,17 +139,19 @@ export default function Home() {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 
+                lg:grid-cols-3 gap-4">
                     {topFallers.map((item) => (
                         <ProductCard key={item.id} item={item} />
                     ))}
                 </div>
             </section>
 
-            {/* Section C — সব পণ্য */}
+            {/* Section C —*/}
             <section
                 id="সব-পণ্য"
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 scroll-mt-6"
+                className="max-w-7xl mx-auto px-4 
+                sm:px-6 lg:px-8 py-6 scroll-mt-6"
             >
                 <div className="mb-4">
                     <h2 className="text-xl font-bold text-gray-800">

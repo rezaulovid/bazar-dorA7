@@ -35,11 +35,11 @@ interface PriceUpProps {
 }
 
 const PriceUp: React.FC<PriceUpProps> = ({ items = [], title = "আজকের দাম বৃদ্ধি পাওয়া পণ্য" }) => {
-    // শুধু যেগুলোর দাম বেড়েছে (up) সেগুলোকে ফিল্টার করা হচ্ছে
+    // (up) 
     const upItems = items.filter(item => item.change.dir === "up");
 
     return (
-        <div className="w-full bg-[#f4f7f5] py-6">
+        <div  className="w-full bg-gray-50 py-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
                 <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
                     <span className="text-red-500">▲</span> {title}

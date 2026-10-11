@@ -107,7 +107,9 @@ const SignUpPage = () => {
 
         <form
           onSubmit={onSubmit}
-          className="rounded-2xl border border-gray-200 bg-[#fbfdfb] p-5 sm:p-6 shadow-sm"
+          className="rounded-2xl border
+           border-gray-200 bg-[#fbfdfb] p-5
+            sm:p-6 shadow-sm"
         >
           <fieldset disabled={loading} className="space-y-4">
             <div>
