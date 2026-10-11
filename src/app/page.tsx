@@ -104,7 +104,7 @@ export default function Home() {
     const topRisers = products
         .filter((item) => item.change?.dir === "up")
         .slice(0, 6);
-
+   console.log(topRisers)
     const topFallers = products
         .filter((item) => item.change?.dir === "down")
         .slice(0, 6);
