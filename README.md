@@ -1,3 +1,80 @@
+# 🛒 বাজার দর | BazarDor
+
+### Know Today's Market Price, Shop Smarter!
+
+## 📌 Project Description
+
+BazarDor is a responsive web application designed to help people in Bangladesh explore daily market prices of essential products. Users can browse products by category, compare prices across different markets, and view detailed pricing information to make informed purchasing decisions.
+
+## 🛠️ Technologies Used
+
+- **Next.js** — React framework and App Router
+- **React** — User interface development
+- **TypeScript** — Type-safe development
+- **Tailwind CSS** — Responsive styling
+- **BetterAuth** — User authentication
+- **React Hot Toast** — Notifications and feedback
+- **REST API** — Product and market price data
+- **Git & GitHub** — Version control
+
+## ✨ Key Features
+
+1. **Daily Market Prices:** View product prices and identify price increases or decreases.
+2. **Product Categories:** Browse products by category and sort them by price.
+3. **Market Price Comparison:** Compare minimum and maximum prices across different markets.
+4. **User Authentication:** Sign up and sign in to access protected product details.
+5. **Responsive Design:** Use the application on mobile, tablet, and desktop devices.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js installed on your computer
+- npm package manager
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/rezaulovid/bazar-dorA7.git
+```
+
+Go to the project directory:
+
+```bash
+cd bazar-dorA7
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file and configure the environment variables required by the application. Do not upload secret keys or database credentials to GitHub.
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 👨‍💻 Developer
+
+**MD. Rezaul Islam**
+
+GitHub: [@rezaulovid](https://github.com/rezaulovid)
+
+## 📄 License
+
+This project was created for educational purposes.
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
