@@ -130,7 +130,6 @@ export default function ProductDetailsPage() {
                         </span>
                     </div>
                 </div>
-
                 {/* (Price Summary Cards) */}
                 <div className="p-6 bg-white grid grid-cols-1 md:grid-cols-3 gap-4 border-b border-gray-100">
                     <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
@@ -149,7 +148,6 @@ export default function ProductDetailsPage() {
                         <span className="text-xs text-gray-500 block mt-1">প্রেক্ষাপটভিত্তিক গড়ের হিসাব</span>
                     </div>
                 </div>
-
                 {/*  (Table Section - API) */}
                 <div className="p-6">
                     <h3 className="font-bold text-gray-800 mb-4">বাজারভিত্তিক আজকের দাম</h3>
